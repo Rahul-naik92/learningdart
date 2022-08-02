@@ -32,22 +32,39 @@ class MyApp extends StatelessWidget {
           ],
         ),
         drawer: Drawer(
-            child: ListView(
-          children: <Widget>[
-            const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.red),
-              child: Text("List Settings"),
+          child: ListView(
+            children: <Widget>[
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.red),
+                child: Text("List Settings"),
+              ),
+              ListTile(
+                title: const Text("Active Member"),
+                onTap: () => debugPrint("Active Member Selected"),
+              ),
+              ListTile(
+                title: const Text("Lazy Member"),
+                onTap: () => debugPrint("Lazy Member Selected"),
+              )
+            ],
+          ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet),
+              label: "Wallet",
             ),
-            ListTile(
-              title: const Text("Active Member"),
-              onTap: () => debugPrint("Active Member Selected"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add_shopping_cart),
+              label: "Cart",
             ),
-            ListTile(
-              title: const Text("Lazy Member"),
-              onTap: () => debugPrint("Lazy Member Selected"),
-            )
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle),
+              label: "Profile",
+            ),
           ],
-        )),
+        ),
       ),
     );
   }

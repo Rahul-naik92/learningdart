@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learningdart/bootom_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,22 +50,23 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance_wallet),
-              label: "Wallet",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.add_shopping_cart),
-              label: "Cart",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle),
-              label: "Profile",
-            ),
-          ],
-        ),
+
+        // bottomNavigationBar: BottomNavigationBar(
+        //   items: const [
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.account_balance_wallet),
+        //       label: "Wallet",
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.add_shopping_cart),
+        //       label: "Cart",
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.account_circle),
+        //       label: "Profile",
+        //     ),
+        //   ],
+        // ),
         body: Container(
           alignment: Alignment.center,
           child: Column(
@@ -78,6 +80,14 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => debugPrint("Tapped"),
+          backgroundColor: Colors.lightGreenAccent,
+          tooltip: 'Cart',
+          child: const Icon(Icons.shopping_cart),
+        ),
+        bottomNavigationBar: const Bottombar(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }
